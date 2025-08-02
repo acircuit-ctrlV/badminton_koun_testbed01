@@ -241,22 +241,29 @@ with col4:
 st.header("ตารางก๊วน")
 
 # Define the column configuration to freeze the "Name" column
-column_configuration = {
-    "Name": st.column_config.TextColumn(
-        "Name",
-        help="The name of the player",
-        fixed="left"
-    )
-}
-
-# Pass the column configuration to st.data_editor
+#column_configuration = {
+#    "Name": st.column_config.TextColumn(
+#        "Name",
+#        help="The name of the player",
+#        fixed="left"
+#    )
+#}
+#
+## Pass the column configuration to st.data_editor
+#edited_df = st.data_editor(
+#    st.session_state.df,
+#    num_rows="dynamic",
+#    use_container_width=True,
+#    key="main_data_editor",
+#    column_config=column_configuration
+#)
 edited_df = st.data_editor(
     st.session_state.df,
     num_rows="dynamic",
     use_container_width=True,
-    key="main_data_editor",
-    column_config=column_configuration
+    key="main_data_editor"
 )
+
 
 if st.button("Calculate"):
     st.session_state.df = edited_df
